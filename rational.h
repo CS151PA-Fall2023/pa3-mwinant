@@ -24,7 +24,7 @@ public:
     Rational(); //default constructor
     Rational(int n, int d); //convert constructors that accept two integers
     Rational(const char *s); //convert constructors that accept strings like "3/4"
-    Rational(const Rational& old);
+    // Rational(const Rational& old);
     ~Rational(); //destructor
     
     operator double(); //type conversion operator that gets invoked when you assign Rational datatype to double. 

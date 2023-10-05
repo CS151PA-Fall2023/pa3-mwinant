@@ -37,12 +37,12 @@
         denominator=denom;
 
     }
-    Rational::Rational(const Rational& old){
-        //std::cout<< "Copy constrctor is running ...\n";
-        this->numerator=old.numerator;
-        this->denominator=old.denominator;
+    // Rational::Rational(const Rational& old){
+    //     //std::cout<< "Copy constrctor is running ...\n";
+    //     this->numerator=old.numerator;
+    //     this->denominator=old.denominator;
     
-    }
+    // }
     Rational::~Rational(){
         //std::cout << "Destructor got called!\n";
     }
@@ -51,32 +51,32 @@
         return (double)numerator/(double)denominator;
     }
     Rational& Rational::operator+(const Rational& r) {
-        Rational result;
-        result.numerator = r.denominator*numerator+(r.numerator*denominator);
-        result.denominator = r.denominator*denominator;
-        result.reduce();
-        return result;
+        Rational addresult;
+        addresult.numerator = r.denominator*numerator+(r.numerator*denominator);
+        addresult.denominator = r.denominator*denominator;
+        addresult.reduce();
+        return addresult;
     }  
     Rational& Rational::operator-(const Rational& r) {
-        Rational result;
-        result.numerator = r.denominator*numerator-(r.numerator*denominator);
-        result.denominator = r.denominator*denominator;
-        result.reduce();
-        return result;
+        Rational subresult;
+        subresult.numerator = r.denominator*numerator-(r.numerator*denominator);
+        subresult.denominator = r.denominator*denominator;
+        subresult.reduce();
+        return subresult;
     }
     Rational& Rational::operator*(const Rational& r) {
-        Rational result;
-        result.numerator= r.numerator*numerator;
-        result.denominator=r.denominator*denominator;
-        result.reduce();
-        return result;
+        Rational mulresult;
+        mulresult.numerator= r.numerator*numerator;
+        mulresult.denominator=r.denominator*denominator;
+        mulresult.reduce();
+        return mulresult;
     }
     Rational& Rational::operator/(const Rational& r) {
-        Rational result;
-        result.numerator=r.denominator*numerator;
-        result.denominator=r.numerator*denominator;
-        result.reduce();
-        return result; 
+        Rational divresult;
+        divresult.numerator=r.denominator*numerator;
+        divresult.denominator=r.numerator*denominator;
+        divresult.reduce();
+        return divresult; 
     }
 
     void Rational::reduce(){
@@ -87,6 +87,7 @@
         int gcd = 0; // greatest common divisor
 
         for (int loop = largest; loop >= 2; loop--)
+        {
             if (numerator % loop == 0 && denominator % loop == 0) {
                 gcd = loop;
                 break;
@@ -96,6 +97,7 @@
                 numerator /= gcd;
                 denominator /= gcd;
             }
+        }
     }
 
 
