@@ -1,13 +1,14 @@
 /**
  * @file main.cpp
- * @author your name (you@domain.com)
+ * @author Mikayla Winant
  * @brief 
  * @version 0.1
  * @date 
  * 
  */
 #include <iostream>
-#include "Rational.h"
+#include <sstream>
+#include "rational.h"
 
 using std::cout;
 using std::endl;
@@ -15,7 +16,7 @@ using std::endl;
 int main()
 {
     Rational num0;
-    cout <<"num0 = "<<num0<<endl;
+    cout <<"num0 = " <<num0<<endl;
 
     Rational num1(12,16);
     cout <<"num1 = "<<num1<<endl;
@@ -56,7 +57,7 @@ int main()
     Rational num10 = num1/num2;
     cout << "(" << num1 << ") / (" << num2 << ") = " << num10 << endl;
     Rational num11 = num3 + num1 * num2;
-    cout << num3 << " + " << num1 << "*" << num2 << " = " << num11 << "\n\n";
+    cout << num3 << " + " << num1 << " * " << num2 << " = " << num11 << "\n\n";
 
     return 0;
 }
