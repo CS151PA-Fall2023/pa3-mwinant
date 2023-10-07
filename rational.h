@@ -33,7 +33,7 @@ public:
     Rational operator*(const Rational& r);
     Rational operator/(const Rational& r);
 
-    //to display Rational numbers on the screen, overload the stream insertion operator (<<). It must be overloaded as a stand-alone function.
+    //overloads the stream insertion operator (<<).
     friend std::ostream& operator<<(std::ostream& os,const Rational& num){
         os << num.numerator << '/' << num.denominator;
     return os;

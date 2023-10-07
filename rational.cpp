@@ -10,7 +10,7 @@
  */
 #include "rational.h"
 
-//Class Definitions
+//Rational Class Definitions
     Rational::Rational(){
         numerator = 1;
         denominator = 1;
@@ -41,8 +41,7 @@
     }
     Rational::~Rational(){
         //std::cout << "Destructor got called!\n";
-    }
-    //type conversion operator that gets invoked when you assign Rational datatype to double. 
+    } 
     Rational::operator double(){
         return (double)numerator/(double)denominator;
     }
@@ -52,7 +51,7 @@
         addresult.denominator = r.denominator*denominator;
         addresult.reduce();
         return addresult;
-    }  
+    } 
     Rational Rational::operator-(const Rational& r) {
         Rational subresult;
         subresult.numerator = r.denominator*numerator-(r.numerator*denominator);
@@ -74,11 +73,24 @@
         divresult.reduce();
         return divresult; 
     }
+
+    /**
+     * @brief recduces the fraction to simplest form
+     * 
+     */
     void Rational::reduce(){
         int reduce=gcd(numerator, denominator);
         numerator/=reduce;
         denominator/=reduce;
     }
+
+    /**
+     * @brief helper function for reduce that finds the greatest common denominator
+     * 
+     * @param x 
+     * @param y 
+     * @return int 
+     */
     int Rational::gcd(int x, int y)
     {
         if (y == 0) // base case
